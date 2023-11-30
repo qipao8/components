@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>使用Sheet.js</title>
+</head>
+
+<body>
+    <button id="exportButton">导出为Excel</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.4/dist/xlsx.full.min.js"></script>
+
+    <script type="module">
+        import { use } from './use.js'
+        document.getElementById('exportButton').addEventListener('click', use());
+    </script>
+</body>
+
+</html>
