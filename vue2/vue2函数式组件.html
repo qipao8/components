@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="click">click</button>
+        <app2 :msg="message.a" />
+    </div>
+    <script>
+        var app2 = Vue.component('app2', {
+            props: {
+                msg: {
+                }
+            },
+            render: function (createElement) {
+                return createElement(
+                    'div',   // tag name
+                    this.msg
+                )
+            },
+        })
+        var app = new Vue({
+            el: '#app',
+            components: {
+                app2
+            },
+            data: {
+                message: {
+                    a: [1, 2, 3],
+                    b: [4, 5, 6]
+                }
+            },
+            methods: {
+                click() {
+                    this.message.a = [11, 22, 33]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
