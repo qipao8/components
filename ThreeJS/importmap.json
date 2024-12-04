@@ -1,0 +1,6 @@
+{
+    "imports": {
+        "three": "https://unpkg.com/three/build/three.module.js",
+        "GLTFLoader":"./js/GLTFLoader.js"
+    }
+}
